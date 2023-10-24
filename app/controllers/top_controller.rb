@@ -9,7 +9,7 @@ class TopController < ApplicationController
     
     def login
         logger.debug params[:uid]
-        if User.find_by(uid: params[:uid]) and User.find_by(pass: params[:pass])
+        if Use.find_by(uid: params[:uid]) and Use.find_by(pass: params[:pass])
             session[:login_uid] = params[:uid]
             redirect_to top_main_path
         else

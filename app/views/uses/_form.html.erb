@@ -1,0 +1,27 @@
+<%= form_with(model: use) do |form| %>
+  <% if use.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(use.errors.count, "error") %> prohibited this use from being saved:</h2>
+
+      <ul>
+        <% use.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :uid, style: "display: block" %>
+    <%= form.text_field :uid %>
+  </div>
+
+  <div>
+    <%= form.label :pass, style: "display: block" %>
+    <%= form.text_field :pass %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

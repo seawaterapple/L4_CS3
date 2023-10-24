@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Uses</h1>
+
+<div id="uses">
+  <% @uses.each do |use| %>
+    <%= render use %>
+    <p>
+      <%= link_to "Show this use", use %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New use", new_use_path %>
